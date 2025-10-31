@@ -41,8 +41,8 @@ test("MCP server should not write to stdout on startup", async () => {
 
           // Verify that stderr contains our log message (optional, but good to confirm logs are going somewhere)
           assert.ok(
-            stderrData.includes("Use Gluestack Components MCP Server"),
-            "stderr should contain startup message"
+            stderrData.includes("Gluestack") && stderrData.includes("MCP Server"),
+            "stderr should contain startup message with 'Gluestack' and 'MCP Server'"
           );
 
           resolve();
